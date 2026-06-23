@@ -37,5 +37,5 @@ if __name__ == "__main__":
             raise error
         except GardenError as e:
             print("Caught GardenError:", e)
-
+    
     print("\nAll custom error types work correctly!")
