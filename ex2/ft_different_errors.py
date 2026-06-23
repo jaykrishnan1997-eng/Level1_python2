@@ -10,7 +10,8 @@ def garden_operations(operation_number) -> None:
     elif operation_number == 3:
         return ('hi' + 123)
     else:
-        return()
+        return ()
+
 
 def test_error_types() -> None:
 
@@ -41,7 +42,6 @@ def test_error_types() -> None:
     print("Testing operation 4...")
     garden_operations(4)
     print("Operation completed successfully\n")
-
 
 
 if __name__ == "__main__":
