@@ -16,6 +16,7 @@ def water_plant(plant_name):
     else:
         print(f"Watering {plant_name}: [OK]")        
 
+
 if __name__ == "__main__":
     print("=== Garden Watering System ===\n")
 
@@ -25,7 +26,6 @@ if __name__ == "__main__":
     water_plant("Lettuce")
     water_plant("Carrots")
     print("Closing watering system\n")
-
 
     print("Testing invalid plants...")
     print("Opening watering system")
