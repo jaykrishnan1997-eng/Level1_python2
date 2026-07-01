@@ -1,21 +1,30 @@
 #!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_finally_block.py                                  :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: jkrishna <jkrishna@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/07/01 11:29:47 by jkrishna            #+#    #+#            #
+#   Updated: 2026/07/01 13:08:18 by jkrishna           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
 
 
 class PlantError(Exception):
-    def __init__(self, message="Invalid plant name to water:") -> None:
+    def __init__(self, message: str = "Invalid plant name to water:") -> None:
         super().__init__(message)
 
 
-def water_plant(plant_name):
+def water_plant(plant_name: str) -> None:
     if not plant_name == plant_name.capitalize():
-        raise PlantError(f"'{plant_name}'")
-        return (0)
+        raise PlantError(f"Invalid plant name to water: '{plant_name}'")
     else:
         print(f"Watering {plant_name}: [OK]")
-        return (1)
 
 
-def test_watering_sysytem():
+def test_watering_system() -> None:
 
     print("Testing valid plants...")
     print("Opening watering system")
@@ -23,9 +32,9 @@ def test_watering_sysytem():
         for valid_plant in ("Tomato", "Lettuce", "Carrots"):
             water_plant(valid_plant)
     except PlantError as e:
-        print(f"Caught PlantError: Invalid plant name to water: {e}")
+        print(f"Caught PlantError: {e}")
         print(".. ending tests and returning to main")
-        return ()
+        return
     finally:
         print("Closing watering system\n")
 
@@ -35,14 +44,14 @@ def test_watering_sysytem():
         for invalid_plant in ("Tomato", "lettuce"):
             water_plant(invalid_plant)
     except PlantError as e1:
-        print(f"Caught PlantError: Invalid plant name to water: {e1}")
+        print(f"Caught PlantError: {e1}")
         print(".. ending tests and returning to main")
-        return ()
+        return
     finally:
         print("Closing watering system\n")
 
 
 if __name__ == "__main__":
     print("=== Garden Watering System ===\n")
-    test_watering_sysytem()
+    test_watering_system()
     print("Cleanup always happens, even with errors!")

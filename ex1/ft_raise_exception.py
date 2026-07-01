@@ -1,12 +1,25 @@
 #!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_raise_exception.py                                :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: jkrishna <jkrishna@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/07/01 11:29:36 by jkrishna            #+#    #+#            #
+#   Updated: 2026/07/01 11:54:42 by jkrishna           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 
 def input_temperature(temp_str: str) -> int:
-    if int(temp_str) > 40:
-        raise ValueError(f"{int(temp_str)}°C is too hot for plants (max 40°C)")
-    elif int(temp_str) < 0:
-        raise ValueError(f"{int(temp_str)}°C is too cold for plants (min 0°C)")
+    temp: int = int(temp_str)
+    if temp > 40:
+        raise ValueError(f"{temp}°C is too hot for plants (max 40°C)")
+    elif temp < 0:
+        raise ValueError(f"{temp}°C is too cold for plants (min 0°C)")
     else:
-        return int(temp_str)
+        return temp
 
 
 def test_temperature() -> None:
@@ -36,4 +49,4 @@ def test_temperature() -> None:
 if __name__ == "__main__":
     print("=== Garden Temperature Checker ===\n")
     test_temperature()
-    print("\nAll tests completed - program didn't crash!")
+    print("All tests completed - program didn't crash!")

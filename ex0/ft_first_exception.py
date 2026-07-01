@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_first_exception.py                                :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: jkrishna <jkrishna@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/07/01 11:29:33 by jkrishna            #+#    #+#            #
+#   Updated: 2026/07/01 11:30:10 by jkrishna           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 
 def input_temperature(temp_str: str) -> int:
     return (int(temp_str))
